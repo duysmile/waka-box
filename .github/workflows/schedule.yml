@@ -4,11 +4,12 @@ on:
     - cron: "*/5 * * * *"
 jobs:
   update-gist:
+    name: update tracking gist
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@master
-      - name: Update gist
-        uses: duysmile/waka-box@master
+      - name: waka-box
+        uses: matchai/waka-box@v4.0.3
         env:
           GH_TOKEN: ${{ secrets.GH_TOKEN }}
           GIST_ID: b2527aa9e284762a1231fcc24efa57f3
